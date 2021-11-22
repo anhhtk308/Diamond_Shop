@@ -16,7 +16,8 @@
 				<li style="border: 0">&nbsp;</li>
 				<li><a class="totalInCart" href="cart.html"><strong>Total
 							Amount <span class="badge badge-warning pull-right"
-							style="line-height: 18px;">$448.42</span>
+							style="line-height: 18px;">$<fmt:formatNumber
+												type="number" groupingUsed="true" value="${TotalPriceCart}" /></span>
 					</strong></a></li>
 			</ul>
 		</div>
@@ -41,7 +42,7 @@
 				<div class="thumbnail">
 					<a class="zoomTool" href="product_details.html" title="add to cart"><span
 						class="icon-search"></span> QUICK VIEW</a> <img
-						src="<c:url value="/assets/user/img/bootstrap-ecommerce-templates.png"/>"
+						src="<c:url value="/assets/user/img/bootstrap-ecommerce-templates.PNG"/>"
 						alt="bootstrap ecommerce templates">
 					<div class="caption">
 						<h4>
@@ -56,7 +57,7 @@
 				<div class="thumbnail">
 					<a class="zoomTool" href="product_details.html" title="add to cart"><span
 						class="icon-search"></span> QUICK VIEW</a> <img
-						src="<c:url value="/assets/user/img/shopping-cart-template.png"/>"
+						src="<c:url value="/assets/user/img/shopping-cart-template.PNG"/>"
 						alt="shopping cart template">
 					<div class="caption">
 						<h4>
@@ -246,16 +247,16 @@ New Products
 				<ul class="thumbnails">
 					<c:forEach var="item" items="${highlightProducts }" varStatus="loop">
 						<li class="span4"><div class="thumbnail">
-								<a class="zoomTool" href="chi-tiet-san-pham/${item.id_product }"
+								<a class="zoomTool" href="<c:url value="/chi-tiet-san-pham/${item.id_product}"></c:url>"
 									title="add to cart"><span class="icon-search"></span> QUICK
-									VIEW</a> <a href="product_details.html"><img
+									VIEW</a> <a href="<c:url value="/chi-tiet-san-pham/${item.id_product}"></c:url>"><img
 									src="<c:url value="/assets/user/img/${item.img }"/>" alt=""></a>
 								<div class="caption">
 									<h5>${item.name }</h5>
 									<h4>
-										<a class="defaultBtn" href="product_details.html"
+										<a class="defaultBtn" href="<c:url value="/chi-tiet-san-pham/${item.id_product}"></c:url>"
 											title="Click to view"><span class="icon-zoom-in"></span></a>
-										<a class="shopBtn" href="#" title="add to cart"><span
+										<a class="shopBtn" href="<c:url value="/AddCart/${item.id_product}"></c:url>" title="add to cart"><span
 											class="icon-plus"></span></a> <span class="pull-right">$<fmt:formatNumber
 												type="number" groupingUsed="true" value="${item.price}" /></span>
 									</h4>

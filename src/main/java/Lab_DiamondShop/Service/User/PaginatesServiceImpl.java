@@ -28,7 +28,7 @@ public class PaginatesServiceImpl implements IPaginatesService{
 
 	private int FindStart(int currentPage, int limit) {
 		// TODO Auto-generated method stub
-		return ((currentPage - 1)*limit) + 1;
+		return ((currentPage - 1)*limit);
 	}
 
 	private int SetInfoTotalPage(int totalData, int limit) {
